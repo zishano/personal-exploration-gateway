@@ -1,0 +1,16 @@
+[Unit]
+Description=Personal Exploration Enterprise WeChat Codex Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=replace-with-linux-user
+WorkingDirectory=/mnt/e/Project/LMK/personal-exploration-gateway
+ExecStart=/mnt/e/Project/LMK/personal-exploration-gateway/scripts/start.sh
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
